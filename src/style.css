@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  background-image: url("./assets/background.png");
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+header {
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.match {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 90vw;
+}
+
+.line {
+  flex-grow: 1;
+  border: 2px solid #1eb720;
+}
+
+.match h1 {
+  padding: 20px;
+}
