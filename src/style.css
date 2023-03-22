@@ -1,6 +1,6 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,15 +9,14 @@
 body {
   background-color: #000000;
   color: #ffffff;
-  background-image: url("./assets/background.png");
-
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  background-image: url("images/background.png");
+  padding: 50px 30px;
 }
 
 header {
-  font-size: 15px;
+  font-size: 0.9rem;
+  font-family: "Inter", sans-serif;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,15 +27,168 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
   height: 200px;
-  width: 90vw;
 }
 
 .line {
   flex-grow: 1;
-  border: 2px solid #1eb720;
+  border: 1px solid #1eb720;
 }
 
-.match h1 {
-  padding: 20px;
+.picks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.card {
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  min-height: 350px;
+}
+
+.card::before {
+  background-position: center;
+  background-size: cover;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.card:hover {
+  border: 6px solid #e22859;
+}
+
+.card:hover .check {
+  opacity: 1;
+}
+
+.card:hover .accept {
+  opacity: 1;
+}
+
+.card.de_inferno::before {
+  background-image: url("./assets/de_inferno.jpeg");
+}
+
+.card.de_cache::before {
+  background-image: url("./assets/de_cache.jpeg");
+}
+
+.card.de_cobblestone::before {
+  background-image: url("./assets/de_cobblestone.jpeg");
+}
+
+.card.de_dust2::before {
+  background-image: url("./assets/de_dust2.jpeg");
+}
+
+.card.de_mirage::before {
+  background-image: url("./assets/de_mirage.jpeg");
+}
+
+.card.de_overpass::before {
+  background-image: url("./assets/de_overpass.jpeg");
+}
+
+.card.de_train::before {
+  background-image: url("./assets/de_train.jpeg");
+}
+
+.accept {
+  background-color: #e22859;
+  font-family: Inter;
+  height: 40px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.3s ease-in-out;
+  width: 100%;
+}
+
+.check {
+  align-items: center;
+  background-color: #e22859;
+  border-radius: 50%;
+  display: flex;
+  font-size: 42px;
+  height: 60px;
+  justify-content: center;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out;
+  width: 60px;
+}
+
+.check i {
+  color: white;
+}
+
+.map-name {
+  bottom: 0;
+  font-family: Inter;
+  font-weight: 700;
+  left: 50%;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease-in-out;
+  width: 100%;
+}
+
+.map-name h2 {
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px #000;
+}
+
+.selected::before {
+  filter: grayscale(100%);
+}
+
+.selected {
+  border: 6px solid #e22859;
+  cursor: not-allowed;
+  overflow: hidden;
+}
+
+.selected::before {
+  filter: grayscale(100%);
+}
+
+.selected .accept,
+.selected .check {
+  opacity: 1;
+}
+
+.picked {
+  border: 6px solid #1eb720;
+}
+
+.card.picked.disable-hover:hover {
+  border: 6px solid #1eb720;
+}
+
+.card.picked.disable-hover:hover .check {
+  opacity: 0;
+}
+
+.card.picked.disable-hover:hover .accept {
+  opacity: 0;
 }
