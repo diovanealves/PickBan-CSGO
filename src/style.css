@@ -7,6 +7,7 @@
 }
 
 body {
+  font-family: "Inter", sans-serif;
   background-color: #000000;
   color: #ffffff;
   background-image: url("images/background.png");
@@ -15,7 +16,6 @@ body {
 
 header {
   font-size: 0.9rem;
-  font-family: "Inter", sans-serif;
 
   display: flex;
   justify-content: center;
@@ -36,7 +36,7 @@ header {
   border: 1px solid #1eb720;
 }
 
-.picks-container {
+.pick-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
@@ -106,7 +106,7 @@ header {
 
 .accept {
   background-color: #e22859;
-  font-family: Inter;
+  font-size: 1.2rem;
   height: 40px;
   left: 0;
   opacity: 0;
@@ -114,6 +114,10 @@ header {
   top: 0;
   transition: opacity 0.3s ease-in-out;
   width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .check {
@@ -139,7 +143,6 @@ header {
 
 .map-name {
   bottom: 0;
-  font-family: Inter;
   font-weight: 700;
   left: 50%;
   opacity: 1;
