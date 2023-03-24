@@ -10,7 +10,9 @@ body {
   font-family: "Inter", sans-serif;
   background-color: #000000;
   color: #ffffff;
-  background-image: url("images/background.png");
+  background-image: url("./assets/background.png");
+  background-repeat: no-repeat;
+  background-position: center center;
   padding: 50px 30px;
 }
 
@@ -194,4 +196,13 @@ header {
 
 .card.picked.disable-hover:hover .accept {
   opacity: 0;
+}
+
+@media (max-width: 768px) {
+  img {
+    width: 40%;
+  }
+  #turnText {
+    font-size: 0.96rem;
+  }
 }
